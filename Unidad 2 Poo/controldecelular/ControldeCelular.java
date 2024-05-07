@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ControldeCelular {
 
     public static void main(String[] args) {
-        //Se llama a Scanner para que usuario ingrese datos
+         //Se llama a Scanner para que usuario ingrese datos
         Scanner L = new Scanner(System.in);
         //Se declaran los atributos
         String marca;
@@ -18,6 +18,18 @@ public class ControldeCelular {
         //Se inicializa una variable en nulo
         Celular cel = null;
         //Se crea un ciclo para la creacion del menu
+        try{
+            double precio = L.nextDouble();
+
+             if (validarFloat(precio)) {
+
+                  System.out.println("El número es válido."); }
+
+              else {
+
+                 System.out.println("El número no es válido, no es un número decimal.");
+
+              
         do{ //Se inicia el ciclo do while
             //Instrucciones
             System.out.println("--- Control de celular ---");
@@ -72,6 +84,18 @@ public class ControldeCelular {
                     entonces aparecera la opcion no es valida*/
             }
         }while(true); //Se cierra el ciclo do while
+       }
+         catch(InputMismatchException er){
+        System.out.println("Debe de introducir un numero entero");
     }
+    }
+        double public static boolean validarFloat(double precio) {
+
+                   if (Float.isNaN(numero) || Float.isInfinite(numero)) {
+
+                       throw new IllegalArgumentException("El valor ingresado no es un número válido.");
+
+                    } return true;
+
+              }
 }
-     
