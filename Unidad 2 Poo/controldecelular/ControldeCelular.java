@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ControldeCelular {
 
     public static void main(String[] args) {
-         //Se llama a Scanner para que usuario ingrese datos
+          //Se llama a Scanner para que usuario ingrese datos
         Scanner L = new Scanner(System.in);
         //Se declaran los atributos
         String marca;
@@ -19,15 +19,7 @@ public class ControldeCelular {
         Celular cel = null;
         //Se crea un ciclo para la creacion del menu
         try{
-            double precio = L.nextDouble();
-
-             if (validarFloat(precio)) {
-
-                  System.out.println("El número es válido."); }
-
-              else {
-
-                 System.out.println("El número no es válido, no es un número decimal.");
+           
 
               
         do{ //Se inicia el ciclo do while
@@ -53,6 +45,14 @@ public class ControldeCelular {
                     dueno = L.next();
                     System.out.println("Introduce el precio del celular: ");
                     precio = L.nextDouble();
+
+             if (validarDouble(precio)) {
+
+                  System.out.println("El número es válido."); }
+
+              else {
+
+                 System.out.println("El número no es válido, no es un número decimal.");
                     cel = new Celular(marca, dueno, precio); //Se crea un nuevo objeto dentro de Celular
                     System.out.println("Celular creado exitosamente.");
                     break;
@@ -88,10 +88,11 @@ public class ControldeCelular {
          catch(InputMismatchException er){
         System.out.println("Debe de introducir un numero entero");
     }
-    }
-        double public static boolean validarFloat(double precio) {
 
-                   if (Float.isNaN(numero) || Float.isInfinite(numero)) {
+    }
+     double public static boolean validarDouble(double precio) {
+
+                   if (Double.isNaN(precio) || Double.isInfinite(precio)) {
 
                        throw new IllegalArgumentException("El valor ingresado no es un número válido.");
 
@@ -99,3 +100,4 @@ public class ControldeCelular {
 
               }
 }
+   
